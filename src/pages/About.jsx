@@ -1,9 +1,9 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 export const About = () => {
   return (
     <>
       <h1>Chi siamo</h1>
-      <Link to="/">Torna alla Homepage</Link>
+      <NavLink to="/">Torna alla Homepage</NavLink>
     </>
   );
 };
