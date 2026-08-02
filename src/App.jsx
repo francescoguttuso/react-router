@@ -1,8 +1,16 @@
 import { useState } from "react";
 import "./App.css";
+import { Routes, Route } from "react-router";
+import { Home } from "./pages/Home";
+import { Product } from "./pages/Product";
+import { About } from "./pages/About";
 
-function App() {
-  return <>works</>;
-}
-
-export default App;
+export const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/" element={<About />} />
+      <Route path="/" element={<Product />} />
+    </Routes>
+  );
+};
