@@ -1,0 +1,70 @@
+/* Container della Home */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Sezione Hero Principale */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elemento decorativo di sfondo sfocato */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Titolo Principale */
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 1.25rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* Sottotitolo / Descrizione */
+.hero-section p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+}
