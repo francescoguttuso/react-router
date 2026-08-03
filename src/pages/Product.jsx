@@ -17,7 +17,7 @@ export const Product = () => {
   if (loading) return <h2>Caricamento prodotti...</h2>;
 
   return (
-    <div>
+    <div className="products-page-container">
       <h1>I nostri Prodotti</h1>
       <div className="products-grid">
         {products.map((item) => (
