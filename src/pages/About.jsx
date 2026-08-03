@@ -1,4 +1,6 @@
 import { NavLink } from "react-router";
+import "./About.css";
+
 export const About = () => {
   return (
     <>

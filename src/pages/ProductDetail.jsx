@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import axios from "axios";
+import "./ProductDetail.css";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -33,29 +34,38 @@ export const ProductDetail = () => {
   if (loading) return <h2>Caricamento dettaglio prodotto...</h2>;
 
   return (
-    <div className="product-detail">
-      <div className="navigation-buttons">
+    <div className="product-detail-container">
+      <div className="product-detail__navigation">
         <button
+          className="product-detail__nav-btn"
           onClick={() => navigate(`/product/${productId - 1}`)}
           disabled={productId <= 1}
         >
           ← Prodotto Precedente
         </button>
 
-        <button onClick={() => navigate(`/product/${productId + 1}`)}>
+        <button
+          className="product-detail__nav-btn"
+          onClick={() => navigate(`/product/${productId + 1}`)}
+        >
           Prodotto Successivo →
         </button>
       </div>
-
-      <article>
-        <h1>{product.title}</h1>
-        <img src={product.image} alt={product.title} width="200" />
-        <p>
-          <strong>Categoria:</strong> {product.category}
-        </p>
-        <p>{product.description}</p>
-        <h3>{product.price} €</h3>
-      </article>
+      <div className="product-detail__content">
+        <div className="product-detail__image-wrapper">
+          <img
+            className="product-detail__image"
+            src={product.image}
+            alt={product.title}
+          />
+        </div>
+        <div className="product-detail__info">
+          <span className="product-detail__category">{product.category}</span>
+          <h1 className="product-detail__title">{product.title}</h1>
+          <p className="product-detail__description">{product.description}</p>
+          <div className="product-detail__price">{product.price} €</div>
+        </div>
+      </div>
     </div>
   );
 };

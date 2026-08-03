@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import axios from "axios";
+import "./Product.css";
 
 export const Product = () => {
   const [products, setProducts] = useState([]);
@@ -21,10 +22,16 @@ export const Product = () => {
       <div className="products-grid">
         {products.map((item) => (
           <article key={item.id} className="product-card">
-            <img src={item.image} alt={item.title} width="100" />
-            <h3>{item.title}</h3>
-            <p>{item.price} €</p>
-            <Link to={`/product/${item.id}`}>Vedi Dettagli</Link>
+            <img
+              className="product-card__image"
+              src={item.image}
+              alt={item.title}
+            />
+            <h3 className="product-card__title">{item.title}</h3>
+            <p className="product-card__price">{item.price} €</p>
+            <Link to={`/product/${item.id}`} className="product-card__button">
+              Vedi Dettagli
+            </Link>
           </article>
         ))}
       </div>

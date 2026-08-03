@@ -5,6 +5,7 @@ import { Product } from "./pages/Product";
 import { ProductDetail } from "./pages/ProductDetail";
 import { NotFound } from "./pages/NotFound";
 import { About } from "./pages/About";
+import "./App.css";
 
 export const App = () => {
   return (
